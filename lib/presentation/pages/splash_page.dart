@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:kas_mentor_mt/domain/config/route/route_const.dart';
 import 'package:kas_mentor_mt/domain/config/theme/colors.dart';
 
+import '../../application/on_board_controller.dart';
+import '../../dependencies_injection.dart';
 import '../../domain/constants/assets.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({super.key});
+   SplashPage({super.key});
+  final onBoardController = sl<OnBoardController>();
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.offAllNamed(welcomeViewRoute);
-    });
+
+    onBoardController.onAppOpened();
 
     return Scaffold(backgroundColor: ColorConst.primary, body: _body());
   }

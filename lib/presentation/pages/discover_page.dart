@@ -5,7 +5,6 @@ import 'package:kas_mentor_mt/domain/constants/assets.dart';
 import 'package:kas_mentor_mt/presentation/widgets/spacer.dart';
 
 import '../widgets/discover_courses_card.dart';
-import '../widgets/featured_test_series_card.dart';
 
 class DiscoverPage extends StatelessWidget {
   const DiscoverPage({super.key});
@@ -23,6 +22,7 @@ class DiscoverPage extends StatelessWidget {
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search Exam...',
+                contentPadding: EdgeInsets.all(0),
                 prefixIcon: SizedBox(
                   height: 50,
                   width: 50,
@@ -39,7 +39,7 @@ class DiscoverPage extends StatelessWidget {
                     spacerWidth(10),
                   ],
                 ),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0)),
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.0),borderSide: BorderSide(color: ColorConst.iconLightGrey)),
               ),
             ),
           ),
@@ -51,13 +51,10 @@ class DiscoverPage extends StatelessWidget {
               children: [
                 Text('Recent Searches', style: TextStyle(fontSize: 16)),
                 SizedBox(height: 8),
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-
-                  _recentSearch('High Court Assistant'),
-                  spacerHeight(10),
-                  _recentSearch('Common Degree Prelims'),
-
-                ]),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [_recentSearch('High Court Assistant'), spacerHeight(10), _recentSearch('Common Degree Prelims')],
+                ),
               ],
             ),
           ),
@@ -65,10 +62,23 @@ class DiscoverPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                OutlinedButton.icon(onPressed: () {}, icon: Icon(Icons.filter_list), label: Text('Filters')),
-                TextButton.icon(onPressed: () {}, icon: Icon(Icons.sort), label: Text('Most Popular')),
+                OutlinedButton.icon(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0))),
+                  icon: ImageIcon(AssetImage(Assets.filter), color: ColorConst.iconLightGrey, size: 15),
+                  label: Text('Filters', style: TextStyle(color: ColorConst.textBlack)),
+                ),
+                Spacer(),
+                ImageIcon(AssetImage(Assets.question), color: ColorConst.primary, size: 15),
+                spacerWidth(10),
+                ImageIcon(AssetImage(Assets.menu), color: ColorConst.iconLightGrey, size: 15),
+                spacerWidth(5),
+                TextButton.icon(
+                  onPressed: () {},
+                  label: ImageIcon(AssetImage(Assets.downArrow), color: ColorConst.iconLightGrey, size: 15),
+                   icon: Text('Most Popular', style: TextStyle(color: ColorConst.textBlack)),
+                ),
               ],
             ),
           ),

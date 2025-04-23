@@ -1,6 +1,6 @@
 import 'package:kas_mentor_mt/domain/constants/app_const.dart';
 import 'package:kas_mentor_mt/domain/core/resource/data_state.dart';
-import 'package:kas_mentor_mt/domain/models/ApiResponse.dart';
+import 'package:kas_mentor_mt/domain/models/api_response.dart';
 
 import '../../domain/core/resource/data_exception.dart';
 import '../datasources/remote/network_helper.dart';

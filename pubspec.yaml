@@ -18,13 +18,13 @@ dependencies:
   intl: any
   google_fonts: ^6.1.1
   cached_network_image: ^3.4.1
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
   flutter_launcher_icons: ^0.13.1
-  change_app_package_name: ^1.4.0
   flutter_native_splash: ^2.3.3
 
 flutter:
@@ -35,7 +35,7 @@ flutter:
     - assets/icons/
 
 flutter_native_splash:
-  color: "#6e41ff"
+  color: "#235DFF"
   image: "assets/logos/logo.png"
   android: true
   ios: true
@@ -43,4 +43,5 @@ flutter_native_splash:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/logos/logo.png"
+  image_path: "assets/logos/app_logo.png"
+  adaptive_icon_background: "#235DFF"

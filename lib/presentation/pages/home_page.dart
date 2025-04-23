@@ -8,7 +8,7 @@ import 'package:kas_mentor_mt/presentation/widgets/success_stories_card.dart';
 import '../../application/landing_controller.dart';
 import '../../domain/config/route/route_const.dart';
 import '../../domain/core/resource/data_state.dart';
-import '../../domain/models/ApiResponse.dart';
+import '../../domain/models/api_response.dart';
 import '../widgets/cat_card.dart';
 import '../widgets/featured_courses_card.dart';
 

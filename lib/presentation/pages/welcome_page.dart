@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kas_mentor_mt/domain/config/route/route_const.dart';
 import 'package:kas_mentor_mt/domain/config/theme/colors.dart';
 import 'package:kas_mentor_mt/presentation/widgets/spacer.dart';
 
@@ -29,7 +28,7 @@ class WelcomePage extends StatelessWidget {
                     right: 20,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.offAllNamed(landingViewRoute);
+                        _onBoardController.onMoveToLandingPage();
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: ColorConst.btBlueShaded,
@@ -65,7 +64,7 @@ class WelcomePage extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 15.0),
                             child: ElevatedButton(
                               onPressed: () {
-                                Get.offAllNamed(landingViewRoute);
+                                _onBoardController.onMoveToLandingPage();
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: ColorConst.primary,

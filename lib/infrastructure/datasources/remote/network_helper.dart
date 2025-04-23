@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:dio/io.dart';
 
 import '../../../domain/constants/app_const.dart';
 import '../../../domain/core/resource/data_exception.dart';

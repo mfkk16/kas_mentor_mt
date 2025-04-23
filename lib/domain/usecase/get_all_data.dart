@@ -1,4 +1,4 @@
-import 'package:kas_mentor_mt/domain/models/ApiResponse.dart';
+import 'package:kas_mentor_mt/domain/models/api_response.dart';
 
 import '../../infrastructure/repositories/api_repository.dart';
 import '../core/resource/data_state.dart';

@@ -19,6 +19,7 @@ class Assets {
 
   // logos
   static const String logo = "assets/logos/logo.png";
+  static const String appLogo = "assets/logos/app_logo.png";
 
   // images
   static const String splashBgWorld = "assets/images/splash_bg_world.png";

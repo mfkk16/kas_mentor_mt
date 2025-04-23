@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       unknownRoute: Routes.errorViewRoute,
       debugShowCheckedModeBanner: false,
       initialBinding: BindingsBuilder(() {
-        Get.put(OnBoardController());
+        Get.put(OnBoardController(sl(),sl()));
         Get.put(LandingController(sl()));
       }),
     );

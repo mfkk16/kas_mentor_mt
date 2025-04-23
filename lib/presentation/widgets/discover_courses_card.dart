@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kas_mentor_mt/domain/models/ApiResponse.dart';
+import 'package:kas_mentor_mt/domain/models/api_response.dart';
 import 'package:kas_mentor_mt/presentation/widgets/spacer.dart';
 
 import 'image_loader.dart';
