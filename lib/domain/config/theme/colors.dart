@@ -12,7 +12,6 @@ class ColorConst {
   static const Color btBlueShaded = Color(0xFF5E91F8);
 
 
-
   static const Color textBlue = Color(0xFF326BDF);
   static const Color textBlack = Color(0xFF4B5563);
 
