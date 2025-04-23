@@ -16,7 +16,7 @@ class Routes {
     GetPage(name: welcomeViewRoute, page: () => WelcomePage()),
     GetPage(name: landingViewRoute, page: () => LandingPage()),
 
-    GetPage(name: homeViewRoute, page: () => const HomePage()),
+    GetPage(name: homeViewRoute, page: () =>  HomePage()),
     GetPage(name: learningsViewRoute, page: () => const LearningPage()),
     GetPage(name: moreViewRoute, page: () => const MorePage()),
     GetPage(name: materialsViewRoute, page: () => const MaterialsPage()),

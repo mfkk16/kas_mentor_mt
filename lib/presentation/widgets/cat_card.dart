@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kas_mentor_mt/presentation/widgets/image_loader.dart';
 
+import '../../domain/config/theme/colors.dart';
+
 class CatCard extends StatelessWidget {
   const CatCard({super.key});
 
@@ -11,36 +13,20 @@ class CatCard extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            width: 100,
-            height: 100,
+            padding: EdgeInsets.all(2),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Colors.blue,
-                  Colors.purple,
-                ],
-              ),
+              gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Colors.blue, Colors.purple]),
             ),
-            child: AspectRatio(
-              aspectRatio: 1/1,
-              child: ImageLoader(
-                url: "https://picsum.photos/200",
-              ),
+            child: Container(
+              padding: EdgeInsets.all(2),
+              decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+              child: AspectRatio(aspectRatio: 1 / 1, child: ImageLoader(url: "https://picsum.photos/200")),
             ),
           ),
         ),
         const SizedBox(height: 5),
-        const Text(
-          'Tips',
-          style: TextStyle(
-            fontSize: 24,
-            color: Color(0xFF4A5568),
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+        Text('Tips', style: TextStyle(fontSize: 14, color: ColorConst.textBlack)),
       ],
     );
   }

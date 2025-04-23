@@ -9,9 +9,7 @@ import '../../../domain/core/resource/data_exception.dart';
 
 class NetworkHelper {
   static final NetworkHelper _networkHelper = NetworkHelper._internal();
-
   NetworkHelper._internal();
-
   factory NetworkHelper() => _networkHelper;
 
   Dio? _dio;
@@ -31,11 +29,6 @@ class NetworkHelper {
         receiveTimeout: const Duration(seconds: timeDuration),
       ),
     );
-
-    (theDio.httpClientAdapter as IOHttpClientAdapter).createHttpClient = () {
-      return HttpClient()..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
-    };
-
     _cancelToken = CancelToken();
     return theDio;
   }
@@ -103,26 +96,4 @@ class NetworkHelper {
     }
   }
 
-  Future<String> getRequestCustomBaseurl({required path, String? baseUrl}) async {
-    const to = Duration(seconds: 3);
-    try {
-      var options = baseUrl != null
-          ? BaseOptions(
-              baseUrl: baseUrl,
-              sendTimeout: to,
-              receiveTimeout: to,
-              connectTimeout: to,
-            )
-          : null;
-      var restClient = options != null ? Dio(options) : await dio;
-      Response response = await restClient!.get(path, cancelToken: _cancelToken);
-      return json.encode(response.data);
-    } on SocketException {
-      throw DataError('No internet connection');
-    } on FormatException {
-      throw DataError('Invalid response format');
-    } catch (e) {
-      throw DataError(_handleError(e));
-    }
-  }
 }

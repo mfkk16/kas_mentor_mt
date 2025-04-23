@@ -4,5 +4,5 @@ class AppConst {
   static String baseUrl = "https://student.kasmentor.org";
 
   // API Common
-  static const String companyDetails = "/dev/v1/dashboard";
+  static const String allData = "/dev/v1/dashboard";
 }

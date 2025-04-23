@@ -9,7 +9,7 @@ class ImageLoader extends StatelessWidget {
   final String url;
   final BoxFit fit;
 
-  const ImageLoader({super.key, this.size = double.infinity, required this.url, this.radius = 100, this.fit = BoxFit.fill});
+  const ImageLoader({super.key, this.size = double.infinity, required this.url, this.radius = 100, this.fit = BoxFit.cover});
 
   @override
   Widget build(BuildContext context) {

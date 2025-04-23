@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-ApiResponse apiResponseFromJson(String str) => ApiResponse.fromJson(json.decode(str));
+AllDataModel allDataModelFromJson(String str) => AllDataModel.fromJson(json.decode(str));
 
-String apiResponseToJson(ApiResponse data) => json.encode(data.toJson());
+String allDataModelToJson(AllDataModel data) => json.encode(data.toJson());
 
-class ApiResponse {
+class AllDataModel {
   Message message;
 
-  ApiResponse({required this.message});
+  AllDataModel({required this.message});
 
-  factory ApiResponse.fromJson(Map<String, dynamic> json) => ApiResponse(message: Message.fromJson(json["message"]));
+  factory AllDataModel.fromJson(Map<String, dynamic> json) => AllDataModel(message: Message.fromJson(json["message"]));
 
   Map<String, dynamic> toJson() => {"message": message.toJson()};
 }
@@ -81,7 +81,7 @@ class FeaturedTest {
   String testName;
   String testImage;
   int noOfTestPapers;
-  int price;
+  double price;
 
   FeaturedTest({required this.testId, required this.testName, required this.testImage, required this.noOfTestPapers, required this.price});
 

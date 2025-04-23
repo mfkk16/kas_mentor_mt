@@ -11,11 +11,11 @@ class ColorConst {
   static const Color backgroundWhite = Color(0xFFFFFFFF);
   static const Color btBlueShaded = Color(0xFF5E91F8);
 
-
   static const Color textBlue = Color(0xFF326BDF);
   static const Color textBlack = Color(0xFF4B5563);
+  static const Color textAppBar = Color(0xFF1F2937);
 
-
+  static const Color iconDarkGrey = Color(0xFF4B5563);
 
   static const Map<int, Color> colorMap = {
     50: Color.fromRGBO(_primaryRed, _primaryGreen, _primaryBlue, .1),

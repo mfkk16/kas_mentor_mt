@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../dependencies_injection.dart';
 import '../domain/config/route/route_const.dart';
 import '../domain/config/route/router.dart';
 import '../domain/config/theme/theme.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialBinding: BindingsBuilder(() {
         Get.put(OnBoardController());
-        Get.put(LandingController());
+        Get.put(LandingController(sl()));
       }),
     );
   }

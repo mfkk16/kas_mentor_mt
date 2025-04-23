@@ -14,7 +14,7 @@ import 'materials_page.dart';
 class LandingPage extends StatelessWidget {
   LandingPage({super.key});
 
-  final List<Widget> _pages = [const HomePage(), LearningPage(), MaterialsPage(), MorePage()];
+  final List<Widget> _pages = [HomePage(), LearningPage(), MaterialsPage(), MorePage()];
   final landingController = sl<LandingController>();
 
   @override
