@@ -16,7 +16,6 @@ class LandingPage extends StatelessWidget {
 
   final List<Widget> _pages = [const HomePage(), LearningPage(), MaterialsPage(), MorePage()];
   final landingController = sl<LandingController>();
-  final double iconSize = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -36,51 +35,54 @@ class LandingPage extends StatelessWidget {
           body: _pages[landingController.currentIndex.value],
           bottomNavigationBar: BottomAppBar(
             shape: const CircularNotchedRectangle(),
-            elevation: 0,
-            notchMargin: 6.0,
-            child: Container(
-              height: 70,
-              margin: const EdgeInsets.fromLTRB(10, 0, 10, 5),
-              child: BottomNavigationBar(
-                currentIndex: landingController.currentIndex.value,
-                onTap: landingController.onPageChange,
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                selectedItemColor: Colors.white,
-                unselectedItemColor: Colors.white.withOpacity(0.4),
-                selectedLabelStyle: const TextStyle(color: Colors.white),
-                unselectedLabelStyle: TextStyle(color: Colors.white.withOpacity(0.4)),
-                items: [
-                  BottomNavigationBarItem(
-                    icon: Container(
-                      margin: const EdgeInsets.only(bottom: 5),
-                      child: Image.asset(Assets.home, height: iconSize, width: iconSize),
-                    ),
-                    label: 'Home',
+            child: BottomNavigationBar(
+              currentIndex: landingController.currentIndex.value,
+              onTap: landingController.onPageChange,
+              backgroundColor: ColorConst.backgroundWhite,
+              selectedItemColor: Theme.of(context).primaryColor,
+              unselectedItemColor: Colors.grey,
+              elevation: 10,
+              selectedFontSize: 12.0,
+              unselectedFontSize: 12.0,
+              selectedLabelStyle: TextStyle(color: Theme.of(context).primaryColor),
+              unselectedLabelStyle: const TextStyle(color: Colors.grey),
+              showUnselectedLabels: true,
+              type: BottomNavigationBarType.fixed,
+
+              items: [
+                BottomNavigationBarItem(
+                  icon: Container(
+                    height: 35,
+                    padding: const EdgeInsets.only(bottom: 2.0),
+                    child: ImageIcon(AssetImage(Assets.home), size: 22),
                   ),
-                  BottomNavigationBarItem(
-                    icon: Container(
-                      margin: const EdgeInsets.only(bottom: 5),
-                      child: Image.asset(Assets.learning, height: iconSize, width: iconSize),
-                    ),
-                    label: 'Learning',
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Container(
+                    height: 35,
+                    padding: const EdgeInsets.only(bottom: 2.0),
+                    child: ImageIcon(AssetImage(Assets.learning), size: 26),
                   ),
-                  BottomNavigationBarItem(
-                    icon: Container(
-                      margin: const EdgeInsets.only(bottom: 5),
-                      child: Image.asset(Assets.materials, height: iconSize, width: iconSize),
-                    ),
-                    label: 'Materials',
+                  label: 'Learning',
+                ),
+                BottomNavigationBarItem(
+                  icon: Container(
+                    height: 35,
+                    padding: const EdgeInsets.only(bottom: 2.0),
+                    child: ImageIcon(AssetImage(Assets.materials), size: 19),
                   ),
-                  BottomNavigationBarItem(
-                    icon: Container(
-                      margin: const EdgeInsets.only(bottom: 5),
-                      child: Image.asset(Assets.more, height: iconSize, width: iconSize),
-                    ),
-                    label: 'More',
+                  label: 'Materials',
+                ),
+                BottomNavigationBarItem(
+                  icon: Container(
+                    height: 35,
+                    padding: const EdgeInsets.only(bottom: 2.0),
+                    child: ImageIcon(AssetImage(Assets.more), size: 22),
                   ),
-                ],
-              ),
+                  label: 'More',
+                ),
+              ],
             ),
           ),
         ),

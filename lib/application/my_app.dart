@@ -6,6 +6,7 @@ import '../domain/config/route/router.dart';
 import '../domain/config/theme/theme.dart';
 import '../domain/constants/string_const.dart';
 import 'landing_controller.dart';
+import 'on_board_controller.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       unknownRoute: Routes.errorViewRoute,
       debugShowCheckedModeBanner: false,
       initialBinding: BindingsBuilder(() {
+        Get.put(OnBoardController());
         Get.put(LandingController());
       }),
     );
