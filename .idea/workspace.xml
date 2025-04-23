@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76b99f7e-dfe1-4435-96e2-b79c4e82cf8f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kas_mentor_mt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kas_mentor_mt.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/my_app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/my_app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/config/route/route_const.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/config/route/route_const.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/config/route/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/config/route/router.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/constants/assets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/constants/assets.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/pages/landing_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/pages/landing_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/pages/splash_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/pages/splash_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Flutter.main.dart.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -62,17 +64,19 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/kkmuhammedfazil/Work/kkmf/kas_mentor_mt/lib/application",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/kkmuhammedfazil/Work/kkmf/kas_mentor_mt/lib/presentation/pages",
     "settings.editor.selected.configurable": "com.google.gct.login2.settings.GoogleLoginApplicationSettingsConfigurableProvider",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/presentation/pages" />
       <recent name="$PROJECT_DIR$/lib/application" />
+      <recent name="$PROJECT_DIR$/lib/presentation/widgets" />
+      <recent name="$PROJECT_DIR$/lib/infrastructure" />
       <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$/assets/images" />
-      <recent name="$PROJECT_DIR$/assets/logos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/domain" />
@@ -89,5 +93,16 @@
       <updated>1745307067019</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

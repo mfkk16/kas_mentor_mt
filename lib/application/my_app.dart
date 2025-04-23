@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../domain/config/route/route_const.dart';
 import '../domain/config/route/router.dart';
 import '../domain/config/theme/theme.dart';
