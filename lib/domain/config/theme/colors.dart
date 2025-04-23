@@ -16,6 +16,7 @@ class ColorConst {
   static const Color textAppBar = Color(0xFF1F2937);
 
   static const Color iconDarkGrey = Color(0xFF4B5563);
+  static const Color iconLightGrey = Color(0xFF9CA3AF);
 
   static const Map<int, Color> colorMap = {
     50: Color.fromRGBO(_primaryRed, _primaryGreen, _primaryBlue, .1),

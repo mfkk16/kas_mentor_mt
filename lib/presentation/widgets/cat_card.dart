@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:kas_mentor_mt/domain/models/ApiResponse.dart';
 import 'package:kas_mentor_mt/presentation/widgets/image_loader.dart';
 
 import '../../domain/config/theme/colors.dart';
 
 class CatCard extends StatelessWidget {
-  const CatCard({super.key});
+  const CatCard(this.highlight, {super.key});
+
+  final Highlight highlight;
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +24,17 @@ class CatCard extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(2),
               decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-              child: AspectRatio(aspectRatio: 1 / 1, child: ImageLoader(url: "https://picsum.photos/200")),
+              child: AspectRatio(aspectRatio: 1 / 1, child: ImageLoader(url: highlight.statusImage)),
             ),
           ),
         ),
         const SizedBox(height: 5),
-        Text('Tips', style: TextStyle(fontSize: 14, color: ColorConst.textBlack)),
-      ],
+        Text(
+          highlight.statusName.length > 10
+              ? '${highlight.statusName.substring(0, 10)}..'
+              : highlight.statusName,
+          style: TextStyle(fontSize: 14, color: ColorConst.textBlack),
+        )      ],
     );
   }
 }

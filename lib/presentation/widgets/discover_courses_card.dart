@@ -4,8 +4,8 @@ import 'package:kas_mentor_mt/presentation/widgets/spacer.dart';
 
 import 'image_loader.dart';
 
-class FeaturedTestSeriesCard extends StatelessWidget {
-  const FeaturedTestSeriesCard(this.featuredTest, {super.key});
+class DiscoverCoursesCard extends StatelessWidget {
+  const DiscoverCoursesCard(this.featuredTest, {super.key});
 
   final FeaturedTest featuredTest;
 
@@ -39,17 +39,17 @@ class FeaturedTestSeriesCard extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 13.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     spacerHeight(3),
-                     Text(
-                       featuredTest.testName,
+                    Text(
+                      featuredTest.testName,
                       maxLines: 1,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         overflow: TextOverflow.ellipsis,
                         fontWeight: FontWeight.bold,
                         color: Color(0xFF333333),
@@ -59,18 +59,17 @@ class FeaturedTestSeriesCard extends StatelessWidget {
                     const Text(
                       'Kerala PSC',
                       maxLines: 1,
-                      style: TextStyle(overflow: TextOverflow.ellipsis, fontSize: 14, color: Color(0xFF666666)),
+                      style: TextStyle(overflow: TextOverflow.ellipsis, fontSize: 12, color: Color(0xFF666666)),
                     ),
                     spacerHeight(5),
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF0066CC),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                        ),
-                        child: const Text('Start Now'),
+                    Text(
+                      "₹${featuredTest.price}",
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontSize: 16,
+                        overflow: TextOverflow.ellipsis,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF0066CC),
                       ),
                     ),
                     spacerHeight(3),

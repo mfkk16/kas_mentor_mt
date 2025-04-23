@@ -7,4 +7,6 @@ const String learningsViewRoute = '/learnings';
 const String moreViewRoute = '/more';
 const String materialsViewRoute = '/materials';
 
+const String discoverViewRoute = '/discover';
+
 const String notFoundViewRoute = '/not_found';

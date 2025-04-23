@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:kas_mentor_mt/domain/models/ApiResponse.dart';
 import 'package:kas_mentor_mt/presentation/widgets/spacer.dart';
 
 import 'image_loader.dart';
 
 class FeaturedCoursesCard extends StatelessWidget {
-  const FeaturedCoursesCard({super.key});
+  const FeaturedCoursesCard(this.featuredCours, {super.key});
+
+  final FeaturedCourse featuredCours;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class FeaturedCoursesCard extends StatelessWidget {
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
-                    ImageLoader(url: "https://dev.kasmentor.org/files/6161.jpg", radius: 0),
+                    ImageLoader(url: featuredCours.courseImage, radius: 0),
                     Container(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -42,8 +45,8 @@ class FeaturedCoursesCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     spacerHeight(3),
-                    const Text(
-                      'Secretariat Assistant Prelims',
+                    Text(
+                      featuredCours.courseName,
                       maxLines: 1,
                       style: TextStyle(
                         fontSize: 16,
@@ -59,8 +62,8 @@ class FeaturedCoursesCard extends StatelessWidget {
                       style: TextStyle(overflow: TextOverflow.ellipsis, fontSize: 14, color: Color(0xFF666666)),
                     ),
                     spacerHeight(5),
-                    const Text(
-                      '₹12,999',
+                    Text(
+                      "₹${featuredCours.courseFee}",
                       maxLines: 1,
                       style: TextStyle(
                         fontSize: 20,

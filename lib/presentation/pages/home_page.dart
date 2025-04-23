@@ -6,13 +6,16 @@ import 'package:kas_mentor_mt/presentation/widgets/spacer.dart';
 import 'package:kas_mentor_mt/presentation/widgets/success_stories_card.dart';
 
 import '../../application/landing_controller.dart';
+import '../../domain/config/route/route_const.dart';
 import '../../domain/core/resource/data_state.dart';
+import '../../domain/models/ApiResponse.dart';
 import '../widgets/cat_card.dart';
 import '../widgets/featured_courses_card.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
+  List<FeaturedTest>? _featuredTests;
   final LandingController controller = Get.find<LandingController>();
 
   @override
@@ -50,7 +53,8 @@ class HomePage extends StatelessWidget {
                 );
               } else if (snapshot.hasData) {
                 if (snapshot.data is DataSuccess) {
-                  return _body();
+                  _featuredTests = (snapshot.data as DataSuccess).data.message.featuredTests;
+                  return _body(snapshot.data!.data);
                 } else {
                   return Center(
                     child: Column(
@@ -80,7 +84,15 @@ class HomePage extends StatelessWidget {
       title: Text("Welcome Guest", style: TextStyle(color: ColorConst.textAppBar)),
 
       actions: [
-        IconButton(onPressed: () {}, icon: Icon(Icons.search, color: ColorConst.iconDarkGrey)),
+        IconButton(
+          onPressed: () {
+            if (_featuredTests != null) {
+              Get.toNamed(discoverViewRoute, arguments: _featuredTests);
+            }
+          },
+
+          icon: Icon(Icons.search, color: ColorConst.iconDarkGrey),
+        ),
         Center(
           child: ElevatedButton(
             onPressed: () {},
@@ -99,27 +111,27 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  _body() {
+  _body(AllDataModel allDataModel) {
     return SingleChildScrollView(
       padding: EdgeInsets.all(15),
       child: Column(
         children: [
-          _catCardBuilder(),
-          spacerHeight(10),
-          _featuredCourses(),
-          spacerHeight(10),
-          featuredTestSeries(),
-          spacerHeight(10),
-          successStories(),
-          spacerHeight(10),
-          _devInfo(),
+          _catCardBuilder(allDataModel.message.highlights),
+          spacerHeight(20),
+          _featuredCourses(allDataModel.message.featuredCourses),
+          spacerHeight(20),
+          featuredTestSeries(allDataModel.message.featuredTests),
+          spacerHeight(20),
+          successStories(allDataModel.message.successStories),
+          spacerHeight(20),
+          _devInfo(allDataModel.message.bottomText),
           spacerHeight(10),
         ],
       ),
     );
   }
 
-  Widget successStories() {
+  Widget successStories(List<SuccessStory> successStories) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -128,11 +140,11 @@ class HomePage extends StatelessWidget {
         SizedBox(
           height: 180,
           child: ListView.separated(
-            itemCount: 10,
+            itemCount: successStories.length,
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => spacerWidth(5),
             itemBuilder: (context, index) {
-              return SuccessStoriesCard();
+              return SuccessStoriesCard(successStories[index]);
             },
           ),
         ),
@@ -140,7 +152,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget featuredTestSeries() {
+  Widget featuredTestSeries(List<FeaturedTest> featuredTests) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -149,11 +161,11 @@ class HomePage extends StatelessWidget {
         SizedBox(
           height: 250,
           child: ListView.separated(
-            itemCount: 10,
+            itemCount: featuredTests.length,
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => spacerWidth(5),
             itemBuilder: (context, index) {
-              return FeaturedTestSeriesCard();
+              return FeaturedTestSeriesCard(featuredTests[index]);
             },
           ),
         ),
@@ -161,7 +173,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _featuredCourses() {
+  Widget _featuredCourses(List<FeaturedCourse> featuredCourses) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -170,11 +182,11 @@ class HomePage extends StatelessWidget {
         SizedBox(
           height: 250,
           child: ListView.separated(
-            itemCount: 10,
+            itemCount: featuredCourses.length,
             scrollDirection: Axis.horizontal,
             separatorBuilder: (context, index) => spacerWidth(5),
             itemBuilder: (context, index) {
-              return FeaturedCoursesCard();
+              return FeaturedCoursesCard(featuredCourses[index]);
             },
           ),
         ),
@@ -182,25 +194,32 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _catCardBuilder() {
+  Widget _catCardBuilder(List<Highlight> highlights) {
     return SizedBox(
       height: 100,
       child: ListView.separated(
-        itemCount: 10,
+        itemCount: highlights.length,
         scrollDirection: Axis.horizontal,
-        separatorBuilder: (context, index) => spacerWidth(5),
+        separatorBuilder: (context, index) => spacerWidth(10),
         itemBuilder: (context, index) {
-          return CatCard();
+          return CatCard(highlights[index]);
         },
       ),
     );
   }
 
-  Widget _devInfo() {
+  Widget _devInfo(String bottomText) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.min,
-      children: [Text("Experience our patented learning journey"), Text("Developed with ❤️ in Trivandrum, India")],
+      children: [
+        Text(bottomText, style: TextStyle(color: ColorConst.textBlack.withOpacity(0.7), fontSize: 25, fontWeight: FontWeight.bold)),
+        spacerHeight(5),
+        Text(
+          "Developed with ❤️ in Trivandrum, India",
+          style: TextStyle(color: ColorConst.textBlack.withOpacity(0.7), fontWeight: FontWeight.w100),
+        ),
+      ],
     );
   }
 }
