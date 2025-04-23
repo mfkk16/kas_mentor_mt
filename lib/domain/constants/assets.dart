@@ -22,4 +22,5 @@ class Assets {
 
   // images
   static const String splashBgWorld = "assets/images/splash_bg_world.png";
+  static const String comingSoon = "assets/images/coming_soon.png";
 }
